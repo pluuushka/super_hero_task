@@ -11,4 +11,4 @@
     
     2. Если отдельно-  pytest test_super_hero.py::название_функции. Например, pytest test_super_hero.py::test_find_the_best
 
-    3. Конкретный случай у определенного теста. Например, pytest -k "test_result_structure and Male-True"
+    3. Конкретный случай у определенного теста. Например, test_super_hero.py::test_find_the_best[Female-False-result3-expectation3]

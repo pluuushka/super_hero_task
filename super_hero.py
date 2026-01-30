@@ -7,7 +7,7 @@ class Superhero:
         self.height = height
         self.name = name
 
-def find_the_best(sex: str, have_work: bool) -> Union[int | tuple]:
+def find_the_best(sex: str, have_work: bool) -> tuple:
     "берет на себя пол и наличие работы и возвращает имя"
     
     heroes = {} # подходящие герои
