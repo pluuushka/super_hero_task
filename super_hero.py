@@ -7,7 +7,7 @@ class Superhero:
         self.height = height
         self.name = name
 
-def find_the_best(sex: str, have_work: bool) -> tuple:
+def find_the_best(gender: str, have_work: bool) -> tuple:
     "берет на себя пол и наличие работы и возвращает имя"
     
     heroes = {} # подходящие герои
@@ -18,7 +18,7 @@ def find_the_best(sex: str, have_work: bool) -> tuple:
     
     for json_number in range(0, len(data)):
         
-        if data[json_number]['appearance']['gender'] == sex:
+        if data[json_number]['appearance']['gender'] == gender:
             if data[json_number]['work']['base'] == "-" or (data[json_number]['work']['base'] != "-" and have_work):
                 curr_hero = Superhero(data[json_number]['appearance']['height'][1], data[json_number]['name'])
 
@@ -42,13 +42,13 @@ def find_the_best(sex: str, have_work: bool) -> tuple:
     return name, max
     
 if __name__ == "__main__":
-    sex = input("Enter the sex: ").strip()
-    if sex != 'Male' and sex != 'Female':
-        raise ValueError("invalid sex. choose Male of Female.")
+    gender = input("Enter the gender: ").strip()
+    if gender != 'Male' and gender != 'Female':
+        raise ValueError("invalid gender. choose Male of Female.")
     have_work: bool
     print("Enter the have work of not: " \
     "1. Have work " \
-    "2. No have work ")
+    "2. Don't have work ")
 
     choose = int(input())
 
@@ -59,7 +59,7 @@ if __name__ == "__main__":
     else: 
         have_work = False
 
-    result = find_the_best(sex, have_work)
+    result = find_the_best(gender, have_work)
     print(result)
 
             
